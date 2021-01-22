@@ -1,0 +1,14 @@
+<h1>File browser UI</h1>
+<h3>Click on root to get started, there is some data bound to the structure by default, it can be found in the filesnfolders1.json file in assets.</h3>
+
+<div style="cursor: pointer;" (click)="show = true;" *ngIf="!show">root</div>
+<div style="cursor: pointer;" (click)="show = false;" *ngIf="show">back</div>
+<div style="cursor: pointer;" (click)="showInput = true; type= 'folder'" *ngIf="!showInput">new folder</div>
+<div style="cursor: pointer;" (click)="showInput = true; type= 'file'" *ngIf="!showInput">new file</div>
+  <div *ngIf="showInput">
+      <input style="margin-left: 20px;" *ngIf="showInput" [(ngModel)]="folderName">
+      <span style="cursor: pointer;" (click)="addNewFolder()">Yes</span>
+      <span style="margin-left: 10px;cursor:pointer;" (click)="showInput = false;folderName=''">No</span>
+  </div>
+<app-repeaters *ngIf = "infor && infor.children && infor.children.length > 0 && loaded && show"
+   [infor]="infor"></app-repeaters>

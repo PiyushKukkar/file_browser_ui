@@ -1,0 +1,50 @@
+<div *ngFor="let item of infor.children" style="margin-top:15px;">
+    <span *ngIf="item.type=='folder'">
+        <div style="cursor: pointer;"
+         (click)="item.show = false;"
+          *ngIf="item.show && item.children.length>0">
+          <span *ngFor="let i of [].constructor(item.level)">
+            &nbsp;
+            </span>
+          back
+        </div>
+        <div style="cursor: pointer;"
+         (click)="item.showInput = true; type= 'folder'"
+          *ngIf="!item.showInput">
+            <span *ngFor="let i of [].constructor(item.level)">
+                &nbsp;
+            </span>
+            new folder
+        </div>
+        <div style="cursor: pointer;"
+         (click)="item.showInput = true; type= 'file'"
+          *ngIf="!item.showInput">
+          <span *ngFor="let i of [].constructor(item.level)">
+            &nbsp;
+          </span>
+          new file
+        </div>
+        <div *ngIf="item.showInput">
+            <input style="margin-left: 20px;" *ngIf="item.showInput" [(ngModel)]="folderName">
+            <span style="cursor: pointer;" (click)="addNewFolder(item)">Yes</span>
+            <span style="margin-left: 10px;cursor:pointer;" 
+            (click)="item.showInput = false;folderName=''">No</span>
+        </div>
+        <span *ngFor="let i of [].constructor(item.level)">
+            &nbsp;
+        </span>
+        <span style="cursor: pointer;"
+        (click)="item.show = true;">
+            folder:{{item.name}}
+        </span>
+    </span>
+    <span *ngIf="item.type=='file'">
+        <span *ngFor="let i of [].constructor(item.level)">
+            &nbsp;
+        </span>
+        file:{{item.name}}
+    </span>
+    <app-repeaters *ngIf="item && item.children && item.children.length>0 && item.show"
+         [infor] = "item">
+    </app-repeaters>    
+</div>

@@ -1,0 +1,18 @@
+{
+    "folder":"root",
+    "level" : 1,
+    "children":[
+                {"show" : false, "level" : 2, "showInput": false, "type":"folder","name":"A","children":[
+                    {"show" : false, "level" : 3, "showInput": false, "type":"folder","name":"AA","children":[]},
+                    {"show" : false, "level" : 3, "showInput": false, "type":"file","name":"Aa"}
+                ]},
+                {"show" : false, "level" : 2, "showInput": false, "type":"folder","name":"B","children":[
+                    {"show" : false, "level" : 3, "showInput": false, "type":"folder","name":"BA","children":[
+                        {"show" : false, "level" : 4, "showInput": false, "type":"folder","name":"BAA","children":[]},
+                        {"show" : false, "level" : 4, "showInput": false, "type":"file","name":"BAa"}
+                    ]},
+                    {"show" : false, "level" : 3,"showInput": false, "type":"file","name":"Ba"}
+                ]},
+                {"show" : false, "level" : 2, "showInput": false, "type":"file","name":"a"}
+            ]
+}
