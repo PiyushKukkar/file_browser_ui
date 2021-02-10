@@ -9,6 +9,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "husky": {
+    "hooks": {
+        "pre-push" : "ng serve --aot"
+    }
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.1.0",
@@ -19,6 +24,7 @@
     "@angular/platform-browser": "~11.1.0",
     "@angular/platform-browser-dynamic": "~11.1.0",
     "@angular/router": "~11.1.0",
+    "husky": "^5.0.9",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
